@@ -103,9 +103,11 @@ export default {
 
 <style scoped lang="scss">
 .game{
+  background: url("../assets/bg.jpg") no-repeat;
+  background-size: 100%;
   box-sizing: border-box;
-  height: 100%;
-  width: 100%;
+  width: 679px;
+  height: 364px;
   position: relative;
   user-select: none;
   overflow: hidden;

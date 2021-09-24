@@ -11,13 +11,7 @@ export default {
   components: {
     game: () => import('./components/game.vue')
   },
-  data() {
-    return {
-
-    }
-  },
   mounted() {
-
   }
 }
 </script>
@@ -30,9 +24,11 @@ body{
 }
 
 #app{
-  width: 679px;
-  height: 364px;
-  background: url("./assets/bg.jpg") no-repeat;
-  background-size: 100%;
+  height:100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3b3a3a;
 }
 </style>
