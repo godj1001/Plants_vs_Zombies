@@ -11,6 +11,7 @@ const pic = [
   require('../../assets/Zombie/Zombie/Zombie6.png'),
   require('../../assets/Zombie/Zombie/Zombie7.png')
 ]
+let lostFlag = false
 export default class BaseZombie extends Body {
   constructor(props) {
     super(props)
@@ -45,8 +46,11 @@ export default class BaseZombie extends Body {
       if (this.sprite.x > roomCount[8]) {
         this.sprite.x -= this.speed
       }
-      if (this.sprite.x < -40) {
-        window.alert('lose')
+      if (this.sprite.x < -40 && !lostFlag) {
+        window.alert('游戏结束')
+        lostFlag = true
+        location.reload()
+        this.event.emit('restart')
       }
     }
   }

@@ -23,7 +23,12 @@ export default class Stage {
     this.initEvent()
     Stage.instance = this
   }
-
+  restart() {
+    this.spriteList = []
+    this.zombieList = new Array(5).fill(0).map(() => {
+      return []
+    })
+  }
   /**
    * init app of pixi
    */
@@ -80,6 +85,11 @@ export default class Stage {
     const index = this.spriteList.findIndex(s => s.id === body.id)
     this.spriteList.splice(index, 1)
     body.sprite.destroy()
+    try {
+      body.stopWork()
+    } catch (e) {
+      console.log(body + 'dont have stopwork fn')
+    }
   }
 
   /**

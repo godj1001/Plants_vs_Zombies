@@ -13,10 +13,13 @@ export default class Sunflower extends Body {
   }
 
   work() {
-    setInterval(() => {
+    this.workFn = setInterval(() => {
       console.log('provide sun')
       store.commit('increment')
       console.log(store.state.count)
     }, 3000)
+  }
+  stopWork() {
+    clearInterval(this.workFn)
   }
 }
